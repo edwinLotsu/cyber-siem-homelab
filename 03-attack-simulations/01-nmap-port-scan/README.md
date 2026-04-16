@@ -67,19 +67,19 @@ data.win.system.eventID: 3 AND data.win.eventdata.sourceIp: 192.168.86.131
 **Timeline Analysis:**  
 ![Wazuh Timeline Spike](screenshots/wazuh-timeline-spike.png)
 
-**Event Count:** 9 network connection events logged in 1.5 seconds
+**Event Count:** Network connection events logged in seconds
 
 ### Sysmon Event Details
 ![Sysmon Event ID 3](screenshots/sysmon-event-id-3.png)
 
 **Key Fields Captured:**
-Event ID: 3 (Network connection detected)
-Source IP: 192.168.86.131 (Kali)
-Destination IP: 192.168.86.129 (Windows 10)
-Destination Port: 135 (example)
-Protocol: tcp
-Process: C:\Windows\System32\svchost.exe
-User: NT AUTHORITY\NETWORK SERVICE
+Event ID: 3 (Network connection detected)  
+Source IP: 192.168.86.131 (Kali)  
+Destination IP: 192.168.86.129 (Windows 10)  
+Destination Port: 135 (example)  
+Protocol: tcp  
+Process: C:\Windows\System32\svchost.exe  
+User: NT AUTHORITY\NETWORK SERVICE  
 
 ### Windows Event Viewer Validation
 ![Windows Event Viewer](screenshots/windows-event-viewer.png)
