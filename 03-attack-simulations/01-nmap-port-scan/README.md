@@ -100,7 +100,7 @@ Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 10 | Whe
 
 ### Test 2: Verify Wazuh Ingestion
 **Query:** `data.win.system.eventID: 3`  
-**Result:** 9 events indexed in Wazuh
+**Result:** 6 events indexed in Wazuh
 
 ### Test 3: Timeline Correlation
 **Observation:** Spike in events matches exact time of Nmap scan  
@@ -146,10 +146,8 @@ Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 10 | Whe
 
 ## Next Steps
 
-- [ ] Test detection against SYN scans (`nmap -sS`)
 - [ ] Implement custom Wazuh rule for automated alerting
 - [ ] Capture network traffic with Wireshark for dual-layer analysis
-- [ ] Build detection rule for slow scans (time-windowed correlation)
 
 ---
 
