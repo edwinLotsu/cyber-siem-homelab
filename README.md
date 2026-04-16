@@ -1,7 +1,3 @@
-# cyber-siem-homelab
-Blue team home lab featuring Wazuh SIEM, Active Directory, attack simulation, and detection engineering
-
-
 # Cybersecurity Home Lab: SIEM Deployment & Threat Detection
 
 A hands-on security operations lab demonstrating SIEM deployment, endpoint monitoring, attack simulation, and detection engineering using Wazuh, Active Directory, and Kali Linux.
@@ -22,7 +18,7 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 
 ### Components
 - **Windows Server 2022** → Active Directory Domain Controller (`lab.local`)
-- **Windows 10 Enterprise** → Domain-joined monitored endpoint
+- **Windows 10 Enterprise** → Domain-joined client monitored endpoint
 - **Kali Linux** → Offensive security platform (attacker simulation)
 - **Ubuntu Server 22.04** → Wazuh SIEM infrastructure (Manager + Indexer + Dashboard)
 
