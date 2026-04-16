@@ -4,7 +4,7 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Deploy enterprise-grade SIEM infrastructure (Wazuh)
 - Monitor Windows endpoints with Sysmon telemetry
@@ -14,7 +14,7 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 
 ---
 
-## 🏗️ Lab Architecture
+## Lab Architecture
 
 ### Components
 - **Windows Server 2022** → Active Directory Domain Controller (`lab.local`)
@@ -36,9 +36,9 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 
 ---
 
-## 📊 Projects Completed
+## Projects Completed
 
-### ✅ 1. Wazuh SIEM Deployment
+### 1. Wazuh SIEM Deployment
 **What:** Deployed multi-component SIEM infrastructure on Ubuntu Server  
 **Why:** Centralized log collection, correlation, and alerting for security monitoring  
 **[View Project →](01-wazuh-siem-deployment/)**
@@ -51,7 +51,7 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 
 ---
 
-### ✅ 2. Sysmon Endpoint Telemetry
+### 2. Sysmon Endpoint Telemetry
 **What:** Enhanced Windows endpoint visibility with Sysmon process/network monitoring  
 **Why:** Windows Event Logs alone miss critical security events — Sysmon fills the gap  
 **[View Project →](02-sysmon-deployment/)**
@@ -64,7 +64,7 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 
 ---
 
-### ✅ 3. Attack Simulation: Nmap Port Scanning
+### 3. Attack Simulation: Nmap Port Scanning
 **What:** Simulated network reconnaissance attack from Kali against Windows 10  
 **Why:** Validate SIEM can detect port scanning — a common reconnaissance technique  
 **[View Project →](03-attack-simulations/01-nmap-port-scan/)**
@@ -81,7 +81,7 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 
 ---
 
-### ✅ 4. Attack Simulation: Failed Login Detection
+### 4. Attack Simulation: Failed Login Detection
 **What:** Generated failed authentication attempts to test brute force detection  
 **Why:** Credential attacks are a top threat — verify logging and alerting works  
 **[View Project →](03-attack-simulations/02-failed-login-detection/)**
@@ -98,7 +98,7 @@ runas /user:lab\Administrator cmd
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 | Category | Tools |
 |----------|-------|
@@ -110,7 +110,7 @@ runas /user:lab\Administrator cmd
 
 ---
 
-## 🎓 Skills Demonstrated
+## Skills Demonstrated
 
 - SIEM deployment and configuration
 - Log collection and centralized monitoring
@@ -124,7 +124,7 @@ runas /user:lab\Administrator cmd
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 - [ ] Brute force attack simulation (Hydra against RDP)
 - [ ] PowerShell attack detection (Script Block Logging)
@@ -134,7 +134,7 @@ runas /user:lab\Administrator cmd
 
 ---
 
-## 📖 Documentation Structure
+## Documentation Structure
 
 Each project includes:
 - **README.md** → Overview and objectives
@@ -144,14 +144,14 @@ Each project includes:
 
 ---
 
-## 🔗 Connect
+## Connect
 
 **LinkedIn:** [Edwin Lotsu](https://www.linkedin.com/in/lotsuedwin)  
 **Resume:** [View PDF](#)
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
