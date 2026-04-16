@@ -39,7 +39,7 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 
 
 **Screenshot:**  
-![Nmap Scan Output](screenshots/nmap-scan-output.png)
+![Nmap Scan Output](screenshots/Nmap-scan-output.png)
 
 ---
 
