@@ -1,6 +1,6 @@
 # Attack Simulation: Nmap Port Scanning Detection
 
-## 📋 Scenario Overview
+## Scenario Overview
 
 **Objective:** Detect network reconnaissance (port scanning) using SIEM and endpoint telemetry
 
@@ -13,7 +13,7 @@
 
 ---
 
-## 🎯 Attack Execution
+## Attack Execution
 
 ### Attack Command
 ```bash
@@ -43,7 +43,7 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 
 ---
 
-## 🔍 Detection Strategy
+## Detection Strategy
 
 ### Data Sources
 1. **Sysmon Event ID 3** → Network connection logging on endpoint
@@ -61,7 +61,7 @@ data.win.system.eventID: 3 AND data.win.eventdata.sourceIp: 192.168.86.131
 
 ---
 
-## 📊 Detection Results
+## Detection Results
 
 ### Wazuh Dashboard
 **Timeline Analysis:**  
@@ -88,7 +88,7 @@ Confirmed Sysmon logs are being generated on the endpoint before forwarding to W
 
 ---
 
-## 🧪 Validation Tests
+## Validation Tests
 
 ### Test 1: Verify Sysmon Logging
 **Command (on Windows 10):**
@@ -96,19 +96,19 @@ Confirmed Sysmon logs are being generated on the endpoint before forwarding to W
 Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 10 | Where-Object {$_.Id -eq 3}
 ```
 
-**Result:** ✅ Event ID 3 entries present
+**Result:** Event ID 3 entries present
 
 ### Test 2: Verify Wazuh Ingestion
 **Query:** `data.win.system.eventID: 3`  
-**Result:** ✅ 9 events indexed in Wazuh
+**Result:** 9 events indexed in Wazuh
 
 ### Test 3: Timeline Correlation
 **Observation:** Spike in events matches exact time of Nmap scan  
-**Result:** ✅ Real-time detection confirmed
+**Result:**  Real-time detection confirmed
 
 ---
 
-## 📈 Analysis
+## Analysis
 
 ### Why This Detection Works
 1. **Endpoint Visibility:** Sysmon captures network connections at the process level
@@ -135,7 +135,7 @@ Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 10 | Whe
 
 ---
 
-## 💡 Lessons Learned
+## Lessons Learned
 
 1. **Sysmon is critical** for network visibility on Windows endpoints
 2. **TCP Connect scans are noisy** — easy to detect but also easy to avoid
@@ -144,7 +144,7 @@ Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 10 | Whe
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 - [ ] Test detection against SYN scans (`nmap -sS`)
 - [ ] Implement custom Wazuh rule for automated alerting
@@ -153,7 +153,7 @@ Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 10 | Whe
 
 ---
 
-## 📚 References
+## References
 
 - [MITRE ATT&CK T1046](https://attack.mitre.org/techniques/T1046/)
 - [Sysmon Event ID 3 Documentation](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
