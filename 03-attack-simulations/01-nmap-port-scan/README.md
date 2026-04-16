@@ -29,12 +29,13 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 **Ports Scanned:** 5 (HTTP, RPC, NetBIOS, SMB, RDP)
 
 ### Results
-PORT     STATE    SERVICE
-80/tcp   filtered http
-135/tcp  open     msrpc
-139/tcp  filtered netbios-ssn
-445/tcp  filtered microsoft-ds
-3389/tcp filtered ms-wbt-server
+|PORT    | STATE    | SERVICE |
+|--------|----------|---------|
+|80/tcp  | filtered | http    |
+|135/tcp | open     | msrpc   |
+|139/tcp | filtered | netbios-ssn|
+|445/tcp | filtered | microsoft-ds|
+|3389/tcp|filtered  | ms-wbt-server|
 
 
 **Screenshot:**  
