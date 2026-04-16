@@ -146,7 +146,7 @@ Each project includes:
 
 ## 🔗 Connect
 
-**LinkedIn:** [Edwin Lotsu](https://www.linkedin.com/in/edwin-lotsu)  
+**LinkedIn:** [Edwin Lotsu](www.linkedin.com/in/lotsuedwin)  
 **Resume:** [View PDF](#)
 
 ---
