@@ -176,9 +176,9 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 - Correlate with successful login afterward (user corrected mistake vs. persistent failure)
 
 ### Detection Gaps
-- **Slow Brute Force:** Attacker spacing attempts over hours/days may evade time-based correlation
-- **Password Spraying:** Trying one password across many accounts generates fewer failures per account
-- **Credential Stuffing:** Valid credentials from breach won't generate Event ID 4625
+- Slow brute force attacks spacing attempts over hours/days may evade detection
+- Password spraying spreads attempts across accounts therefore generating fewer failures per account
+- Legitimate user mistakes may generate noise
 
 ---
 
