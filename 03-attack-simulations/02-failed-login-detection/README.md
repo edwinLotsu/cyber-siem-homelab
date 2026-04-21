@@ -70,7 +70,7 @@ data.win.system.eventID: 4625 AND data.win.system.computer: DESKTOP-7Y29ADQ.lab.
 
 ---
 
-## 📊 Detection Results
+## Detection Results
 
 ### Windows Event Viewer
 **Timeline Analysis:**  
