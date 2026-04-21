@@ -2,4 +2,4 @@ nmap -sS <target-ip>
 
 nmap -A <target-ip>
 
-nmap -sT -4 -p 80,135,139,445,3389 <target-ip  
+nmap -sT -4 -p 80,135,139,445,3389 <target-ip>  
