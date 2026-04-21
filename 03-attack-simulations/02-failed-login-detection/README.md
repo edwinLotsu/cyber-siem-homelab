@@ -218,7 +218,6 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 ## Next Steps
 
 - [ ] Build custom Wazuh detection rule for automated alerting (threshold: 5 failures in 5 minutes)
-- [ ] Simulate successful credential attack (failed logins → successful login) to test post-compromise detection
 - [ ] Test detection against distributed brute force (multiple source IPs)
 - [ ] Implement automated response (account lockout via PowerShell script triggered by Wazuh)
 - [ ] Simulate password spraying attack (1 password, many accounts) for comparison
@@ -236,8 +235,8 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 
 ## Related Scenarios
 
-- [01 - Nmap Port Scan Detection](../01-nmap-port-scan/) ← Previous
-- 03 - PowerShell Attack Detection → Next (Coming Soon)
+- [01 - Nmap Port Scan Detection](../01-nmap-port-scan/)
+- - PowerShell Attack Detection
 
 ---
 
