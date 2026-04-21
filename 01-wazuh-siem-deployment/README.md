@@ -13,4 +13,4 @@ Deployed Wazuh SIEM on Ubuntu 24.04 to centralize log collection and analysis ac
 - Logs ingested from Windows endpoints
 - Verified log flow in Wazuh dashboard
 
-### *(Full installation steps intentionally omitted — focus is on detection engineering)*
+### *(Full installation steps intentionally omitted - focus is on detection engineering)*
