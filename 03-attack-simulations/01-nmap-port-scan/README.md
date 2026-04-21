@@ -2,6 +2,8 @@
 
 ## Scenario Overview
 
+**Detection Summary:** Rapid multi-port connections from a single source IP were captured via Sysmon Event ID 3 and correlated in Wazuh, indicating port scanning behavior.
+
 **Objective:** Detect network reconnaissance (port scanning) using SIEM and endpoint telemetry
 
 **Attacker:** Kali Linux (`192.168.86.131`)  
@@ -51,13 +53,15 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 3. **Windows Event Viewer** → Native security logging
 
 ### Detection Query (Wazuh Discover)
+```kql
 data.win.system.eventID: 3 AND data.win.eventdata.sourceIp: 192.168.86.131
+```
 
 ### Expected Indicators
-- Multiple TCP connections from single source IP
-- Connections to various ports within short timeframe (<2 seconds)
+- Multiple connections from a single source IP
+- Connections to multiple destination ports within a short timeframe
 - Sequential source port changes (ephemeral ports)
-- Connections to well-known service ports
+- Targeting of common service ports
 
 ---
 
@@ -116,15 +120,12 @@ Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 10 | Whe
 3. **Pattern Recognition:** Multiple rapid connections = scanning behavior
 4. **Low Latency:** Events appeared in SIEM within seconds
 
-```diff
-- text in red
 ### False Positive Considerations
 **Legitimate scenarios that could trigger similar alerts:**
 - Automated vulnerability scanners (Nessus, Qualys)
 - Configuration management tools (Ansible, Puppet)
 - Network monitoring solutions (PRTG, SolarWinds)
 - Load balancers performing health checks
-```
 
 **Mitigation:** Whitelist known scanner IPs, adjust alerting thresholds
 
