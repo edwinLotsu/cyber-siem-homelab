@@ -64,32 +64,6 @@ Deployed Wazuh SIEM on Ubuntu Server 24.04 to provide centralized security monit
 
 ## Technical Implementation
 
-### Log Sources Configured
-
-**Windows Endpoints:**
-```xml
-<!-- Wazuh Agent Config: C:\Program Files (x86)\ossec-agent\ossec.conf -->
-<localfile>
-  <location>Security</location>
-  <log_format>eventchannel</log_format>
-</localfile>
-
-<localfile>
-  <location>Microsoft-Windows-Sysmon/Operational</location>
-  <log_format>eventchannel</log_format>
-</localfile>
-
-<localfile>
-  <location>System</location>
-  <log_format>eventchannel</log_format>
-</localfile>
-```
-
-**Event Channels Monitored:**
-- Windows Security Log (Event IDs 4624, 4625, 4720, etc.)
-- Sysmon Operational Log (Event IDs 1, 3, 10, etc.)
-- Windows System Log (service failures, reboots, etc.)
-
 ### Network Configuration
 
 **SIEM Server:**
@@ -97,6 +71,11 @@ Deployed Wazuh SIEM on Ubuntu Server 24.04 to provide centralized security monit
 - Wazuh Manager Port: 1514 (agent communication)
 - Dashboard Port: 5601 (HTTPS web UI)
 - Indexer Port: 9200 (Elasticsearch API)
+
+**Event Channels Monitored:**
+- Windows Security Log (Event IDs 4624, 4625, 4720, etc.)
+- Sysmon Operational Log (Event IDs 1, 3, 10, etc.)
+- Windows System Log (service failures, reboots, etc.)
 
 **Firewall Rules:**
 - Allow inbound TCP 1514 from Windows agents
@@ -164,24 +143,6 @@ This SIEM deployment enables the following detection scenarios:
 **Sysmon network logging disabled** → Modified config to `onmatch="exclude"` with no rules  
 
 **Troubleshooting details documented in:** `troubleshooting.md`
-
----
-
-## Directory Contents
-
-```
-01-wazuh-siem-deployment/
-├── README.md                          # This file
-├── screenshots/
-│   ├── wazuh-overview-modules.png     # Dashboard overview
-│   ├── wazuh-endpoints.png            # Active agents
-│   ├── wazuh-agent-details.png        # Per-agent telemetry
-│   └── wazuh-discover-logs.png        # Log timeline
-├── configs/
-│   ├── ossec.conf.sample              # Wazuh agent config (sanitized)
-│   └── sysmonconfig-export.xml        # Sysmon config for network logging
-└── troubleshooting.md                 # Common issues and solutions
-```
 
 ---
 
