@@ -54,7 +54,7 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 ### 2. Attack Simulation: Nmap Port Scanning
 **What:** Simulated network reconnaissance attack from Kali against Windows 10  
 **Why:** Validate SIEM can detect port scanning — a common reconnaissance technique  
-**[View Project →](03-attack-simulations/01-nmap-port-scan/)**
+**[View Project →](02-attack-simulations/01-nmap-port-scan/)**
 
 **Attack Details:**
 ```bash
@@ -71,7 +71,7 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 ### 3. Attack Simulation: Failed Login Detection
 **What:** Generated failed authentication attempts to test brute force detection  
 **Why:** Credential attacks are a top threat — verify logging and alerting works  
-**[View Project →](03-attack-simulations/02-failed-login-detection/)**
+**[View Project →](02-attack-simulations/02-failed-login-detection/)**
 
 **Attack Details:**
 ```cmd
