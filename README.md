@@ -44,23 +44,10 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 **[View Project →](01-wazuh-siem-deployment/)**
 
 **Key Achievements:**
-- Wazuh Manager installed and configured
-- Elasticsearch-based indexer for log storage
+- Wazuh agents deployed to 2 Windows endpoints (100% active status)
+- Sysmon deployed on Windows Server + Windows 10 with network connection logging (Event ID 3) and process creation monitoring (Event ID 1) enabled
 - Web-based dashboard for visualization
-- Agents deployed to 2 Windows endpoints (100% active status)
-
----
-
-### 2. Sysmon Endpoint Telemetry
-**What:** Enhanced Windows endpoint visibility with Sysmon process/network monitoring  
-**Why:** Windows Event Logs alone miss critical security events — Sysmon fills the gap  
-**[View Project →](02-sysmon-deployment/)**
-
-**Key Achievements:**
-- Sysmon deployed on Windows Server + Windows 10
-- Network connection logging enabled (Event ID 3)
-- Process creation monitoring (Event ID 1)
-- Configuration validated with test scenarios
+- Configuration validated through attack simulation scenarios
 
 ---
 
@@ -75,7 +62,7 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 ```
 
 **Detection:**
-- 9 Sysmon Event ID 3 logs captured in ~1.5 seconds
+- Sysmon Event ID 3 logs captured in seconds
 - Wazuh timeline showed clear spike during scan window
 - Mapped to MITRE ATT&CK T1046 (Network Service Scanning)
 
