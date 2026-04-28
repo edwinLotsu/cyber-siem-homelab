@@ -44,30 +44,17 @@ A hands-on security operations lab demonstrating SIEM deployment, endpoint monit
 **[View Project →](01-wazuh-siem-deployment/)**
 
 **Key Achievements:**
-- Wazuh Manager installed and configured
-- Elasticsearch-based indexer for log storage
+- Wazuh agents deployed to 2 Windows endpoints (100% active status)
+- Sysmon deployed on Windows Server + Windows 10 with network connection logging (Event ID 3) and process creation monitoring (Event ID 1) enabled
 - Web-based dashboard for visualization
-- Agents deployed to 2 Windows endpoints (100% active status)
+- Configuration validated through attack simulation scenarios
 
 ---
 
-### 2. Sysmon Endpoint Telemetry
-**What:** Enhanced Windows endpoint visibility with Sysmon process/network monitoring  
-**Why:** Windows Event Logs alone miss critical security events — Sysmon fills the gap  
-**[View Project →](02-sysmon-deployment/)**
-
-**Key Achievements:**
-- Sysmon deployed on Windows Server + Windows 10
-- Network connection logging enabled (Event ID 3)
-- Process creation monitoring (Event ID 1)
-- Configuration validated with test scenarios
-
----
-
-### 3. Attack Simulation: Nmap Port Scanning
+### 2. Attack Simulation: Nmap Port Scanning
 **What:** Simulated network reconnaissance attack from Kali against Windows 10  
 **Why:** Validate SIEM can detect port scanning — a common reconnaissance technique  
-**[View Project →](03-attack-simulations/01-nmap-port-scan/)**
+**[View Project →](02-attack-simulations/01-nmap-port-scan/)**
 
 **Attack Details:**
 ```bash
@@ -75,16 +62,16 @@ nmap -sT -4 -p 80,135,139,445,3389 192.168.86.129
 ```
 
 **Detection:**
-- 9 Sysmon Event ID 3 logs captured in ~1.5 seconds
+- Sysmon Event ID 3 logs captured in seconds
 - Wazuh timeline showed clear spike during scan window
 - Mapped to MITRE ATT&CK T1046 (Network Service Scanning)
 
 ---
 
-### 4. Attack Simulation: Failed Login Detection
+### 3. Attack Simulation: Failed Login Detection
 **What:** Generated failed authentication attempts to test brute force detection  
 **Why:** Credential attacks are a top threat — verify logging and alerting works  
-**[View Project →](03-attack-simulations/02-failed-login-detection/)**
+**[View Project →](02-attack-simulations/02-failed-login-detection/)**
 
 **Attack Details:**
 ```cmd

@@ -148,7 +148,6 @@ This SIEM deployment enables the following detection scenarios:
 
 ## Related Projects
 
-- [Sysmon Deployment](../02-sysmon-deployment/) → Enhanced endpoint telemetry
 - [Attack Simulations](../03-attack-simulations/) → Detection validation scenarios
 
 ---
