@@ -4,6 +4,7 @@
 **Objective:** Detect brute force authentication attempts using Windows Event Logs and SIEM correlation
 
 **Attacker:** Kali Linux
+
 **Target:** Windows 10 Client  
 **Attack Tool:** Hydra (SMB and RDP modules)  
 **Detection Tools:** Wazuh SIEM, Custom Rule ID 100100, Windows Security Event Log (Event ID 4625)
