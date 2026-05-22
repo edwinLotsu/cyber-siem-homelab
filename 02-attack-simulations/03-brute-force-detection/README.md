@@ -31,6 +31,7 @@ hydra -l edwin.lotsu -P ~/small-wordlist.txt 192.168.86.129 smb2
 - Multiple failed authentication attempts generated
 
  **Screenshot:**
+ ![SMB Brute Force Command](screenshots/hydra-attack-smb.png)
 
  ---
 
@@ -58,7 +59,8 @@ hydra -l edwin.lotsu -P ~/small-wordlist.txt -t 1 -W 3 192.168.86.129 rdp
 - Authentication failures recorded on Windows target
 
  **Screenshot:**
-
+ ![RDP Brute Force Command](screenshots/hydra-attack-rdp.png)
+ 
 ---
 
 ## Detection Strategy
@@ -118,8 +120,6 @@ local_rules.xml
 - Same target account correlation
 - Elevates repeated failures beyond raw Windows logging
 
-**Screenshot:**
-
 ---
 
 ## Detection Results
@@ -144,6 +144,8 @@ Observed fields:
 - Failed Repeatedly
 
 **Screenshot**
+ ![Windows Event Viewer record](screenshots/Windows-Event-Viewer-Record.png)
+ 
 ---
 
 ### Wazuh SIEM Correlation
@@ -162,6 +164,7 @@ Observed:
 The attack was elevated from *single login failures* to **correlated brute force activity** 
 
 **Screenshots**
+ ![Wazuh SIEM Correlation](screenshots/Wazuh-SIEM-Correlation.png)
 
 ## Validation Tests
 
