@@ -14,7 +14,17 @@
 ---
 
 ## Attack Execution
-
+## Attack Parameters Summary
+- **Attacker:** Kali Linux (192.168.86.131)
+- **Target:** Windows 10 Client (192.168.86.129)
+- **Target Account:** edwin.lotsu (non-admin user)
+- **Attack Duration:** ~5 minutes total (2 min SMB + 3 min RDP)
+- **Password List:** small-wordlist.txt (20 common passwords)
+- **Failed Login Attempts:** 229 total (87 SMB + 142 RDP)
+- **Successful Logins:** 0 (attack unsuccessful, detection successful)
+- **Detection Latency:** ~45 seconds after 5 failures
+- **Custom Wazuh Rule:** ID 100100 (threshold: 5 failures in 5 minutes)
+  
 ## SMB Brute Force
 
 ### Attack Command
